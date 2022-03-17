@@ -65,6 +65,7 @@
 .middleSection {
   height: 100%;
   display: flex;
+  justify-content: center;
   align-items: flex-end;
   flex-grow: 1;
 }
@@ -75,6 +76,7 @@
   background-color: #fff;
   border-radius: 10px;
   margin: 10px;
+  z-index: 1;
 }
 
 h1,
