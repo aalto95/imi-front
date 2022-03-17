@@ -36,10 +36,10 @@ export const Header = () => {
   return (
     <header className="mx-32">
       <div className="flex justify-between my-12">
-        <div className="flex items-center">
+        <Link to="/" className="flex items-center">
           <img src={logo} alt="imi-logo" className="w-24 mr-4" />
           <h1 className="text-2xl w-72 text-berlin-blue">ИНСТИТУТ МАТЕМАТИКИ И ИНФОРМАТИКИ</h1>
-        </div>
+        </Link>
         <div className="flex items-center">
           <Link to="/" className="mr-4 text-2xl">Контакты</Link>
           <a href="tel:+74112496834" className="text-2xl">+7 (4112) 49-68-34</a>
