@@ -34,7 +34,7 @@ export const Header = () => {
     }
   ])
   return (
-    <header className="h-screen mx-32">
+    <header className="mx-32">
       <div className="flex justify-between my-12">
         <div className="flex items-center">
           <img src={logo} alt="imi-logo" className="w-24 mr-4" />
