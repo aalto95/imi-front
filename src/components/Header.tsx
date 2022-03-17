@@ -38,7 +38,7 @@ export const Header = () => {
       <div className="flex justify-between my-12">
         <div className="flex items-center">
           <img src={logo} alt="imi-logo" className="w-24 mr-4" />
-          <h1 className="text-2xl w-72">ИНСТИТУТ МАТЕМАТИКИ И ИНФОРМАТИКИ</h1>
+          <h1 className="text-2xl w-72 text-berlin-blue">ИНСТИТУТ МАТЕМАТИКИ И ИНФОРМАТИКИ</h1>
         </div>
         <div className="flex items-center">
           <Link to="/" className="mr-4 text-2xl">Контакты</Link>
@@ -48,7 +48,7 @@ export const Header = () => {
       <nav className="flex justify-between">
         {
           navigation.map((navElem) => (
-          <Link to={navElem.path} className="uppercase text-terracota text-2xl">{navElem.name}</Link>
+          <Link to={navElem.path} className="uppercase text-terracota text-2xl" key={navElem.name}>{navElem.name}</Link>
           ))
         }
       </nav>

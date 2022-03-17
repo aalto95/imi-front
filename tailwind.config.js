@@ -3,6 +3,9 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'centurygothic': ['centurygothic', 'sans-serif']
+    },
     extend: {
       colors: {
         'terracota': '#943813',
