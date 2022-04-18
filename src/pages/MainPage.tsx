@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import Banner from '../components/Banner'
+import Banner from '../components/Banner/Banner'
 import TileBlocks from '../components/TileBlocks'
 
 interface MainPageProps {
