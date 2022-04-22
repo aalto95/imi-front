@@ -1,13 +1,16 @@
 import { FunctionComponent } from 'react'
+import { useRecoilValue } from 'recoil'
 import Banner from '../components/Banner/Banner'
 import { Sidebar } from '../components/Sidebar'
 import TileBlocks from '../components/TileBlocks'
+import { isSidebarActiveState } from '../recoil/selectors/sidebarSelector'
 
 interface MainPageProps {
   
 }
  
 const MainPage: FunctionComponent<MainPageProps> = () => {
+  const isSidebarActive = useRecoilValue(isSidebarActiveState)
   const mockData = [
     {
       image: "https://sun9-83.userapi.com/impg/IfI9YKFHmUsD4JgbtZb-ypJkHYQlgTm-7GmqDQ/EUnv3P-8ALY.jpg?size=2560x1920&quality=96&sign=8dda5b4a07127cc8bac6e7af68396ce6&type=album",
@@ -27,7 +30,7 @@ const MainPage: FunctionComponent<MainPageProps> = () => {
   ]
   return (
     <>
-      <Sidebar />
+      {isSidebarActive && <Sidebar />}
       <Banner slides={mockData}/>
       <TileBlocks />
     </>

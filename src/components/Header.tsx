@@ -1,9 +1,16 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useRecoilState } from 'recoil'
 import logo from '../assets/imi_logo.png'
+import { sidebarState } from '../recoil/atoms/sidebarAtom'
 import './Header.css'
 
 export const Header = () => {
+  const [isSidebarActive, setIsSidebarActive] = useRecoilState(sidebarState)
+  const onHamburgerClick = () => {
+    setIsSidebarActive(!isSidebarActive)
+    console.log(isSidebarActive)
+  }
   const [navigation] = useState([
     {
       name: 'Институт',
@@ -47,7 +54,7 @@ export const Header = () => {
         </div>
         <div className="flex items-center lg:hidden">
           <label htmlFor="check">
-            <input type="checkbox" id="check"/> 
+            <input type="checkbox" id="check" onClick={() => onHamburgerClick()}/> 
             <span></span>
             <span></span>
             <span></span>

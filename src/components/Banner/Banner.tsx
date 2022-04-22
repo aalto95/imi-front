@@ -13,11 +13,9 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
   const [whichDirection, setWhichDirection] = useState<string>('')
   const handleSlideLeft = useCallback(() => {
     setSlideArray([slideArray[slideArray.length - 1], ...slideArray.slice(0, slideArray.length - 1)])
-    setWhichDirection('left')
   }, [slideArray])
   const handleSlideRight = useCallback(() => {
     setSlideArray([...slideArray.slice(1), slideArray[0]])
-    setWhichDirection('right')
   }, [slideArray])
 
   return (
