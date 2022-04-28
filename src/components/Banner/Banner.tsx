@@ -1,8 +1,8 @@
 import { FunctionComponent, useCallback, useState } from 'react'
-import { Slide } from '../models/slide'
+import { Slide } from '../../models/slide'
 import styles from './Banner.module.css'
-import arrowRight from '../assets/right-svgrepo-com.svg'
-import arrowLeft from '../assets/left-svgrepo-com.svg'
+import arrowRight from '../../assets/right-svgrepo-com.svg'
+import arrowLeft from '../../assets/left-svgrepo-com.svg'
 
 interface BannerProps {
   slides: Slide[]
@@ -13,17 +13,13 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
   const [whichDirection, setWhichDirection] = useState<string>('')
   const handleSlideLeft = useCallback(() => {
     setSlideArray([slideArray[slideArray.length - 1], ...slideArray.slice(0, slideArray.length - 1)])
-    setWhichDirection('left')
   }, [slideArray])
   const handleSlideRight = useCallback(() => {
     setSlideArray([...slideArray.slice(1), slideArray[0]])
-    setWhichDirection('right')
   }, [slideArray])
 
   return (
     <div className={styles.container}>
-      <div className={styles.blocker}>
-      </div>
       <div className={styles.slider}>
         {slides.map((slide) => (
           <div 
@@ -49,14 +45,8 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
           <img src={arrowRight} alt="" className={styles.arrow} />
         </button>
       </div>
-      <div className={styles.blocker}>
-      </div>
     </div>
   )
 }
  
 export default Banner;
-
-function slides<T>(slides: any): [any, any] {
-  throw new Error('Function not implemented.')
-}
