@@ -1,4 +1,4 @@
-import { FunctionComponent, useCallback, useState } from 'react'
+import { FunctionComponent, useState } from 'react'
 import { Slide } from '../../models/slide'
 import styles from './Banner.module.css'
 import arrowRight from '../../assets/right-svgrepo-com.svg'
@@ -10,21 +10,20 @@ interface BannerProps {
  
 const Banner: FunctionComponent<BannerProps> = ({slides}) => {
   const [slideArray, setSlideArray] = useState<Slide[]>(slides)
-  const [whichDirection, setWhichDirection] = useState<string>('')
-  const handleSlideLeft = useCallback(() => {
+  const handleSlideLeft = () => {
     setSlideArray([slideArray[slideArray.length - 1], ...slideArray.slice(0, slideArray.length - 1)])
-  }, [slideArray])
-  const handleSlideRight = useCallback(() => {
+  }
+  const handleSlideRight = () => {
     setSlideArray([...slideArray.slice(1), slideArray[0]])
-  }, [slideArray])
+  }
 
   return (
     <div className={styles.container}>
       <div className={styles.slider}>
-        {slides.map((slide) => (
+        {slideArray.map((slide) => (
           <div 
             key={slide.image} 
-            className={`${styles.slide} ${slideArray[0] === slide ? '' : whichDirection === 'right' ? styles.slideFadingToLeft : styles.slideFadingToRight}`} 
+            className={`${styles.slide}`} 
             style={{backgroundImage: `url(${slide.image})`}}
           >
             <h1>{slide.label}</h1>

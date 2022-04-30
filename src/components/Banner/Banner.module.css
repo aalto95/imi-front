@@ -76,17 +76,3 @@ h1,
 p {
   color: #fff;
 }
-
-.slideFadingToLeft {
-  z-index: 1;
-  transition: 1s;
-  visibility: hidden;
-  transform: translateX(-100%);
-}
-
-.slideFadingToRight {
-  z-index: 1;
-  transition: 1s;
-  visibility: hidden;
-  transform: translateX(100%);
-}
