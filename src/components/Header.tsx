@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import logo from '../assets/imi_logo.png'
 import { sidebarState } from '../recoil/atoms/sidebarAtom'
-import './Header.css'
 import menuIcon from '../assets/menu-icon.svg'
 
 export const Header = () => {
@@ -52,7 +51,7 @@ export const Header = () => {
           <Link to="/" className="mr-4 text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">Контакты</Link>
           <a href="tel:+74112496834" className="text-xs sm:text-sm md:text-md lg:text-lg xl:text-xl 2xl:text-2xl">+7 (4112) 49-68-34</a>
         </div>
-        <button className="flex items-center md:hidden" onClick={() => onHamburgerClick()}>
+        <button className="flex items-center md:hidden" onClick={onHamburgerClick}>
           <img src={menuIcon} alt="menu icon" className="w-8" />
         </button>
       </div>

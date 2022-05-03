@@ -9,22 +9,30 @@ interface BannerProps {
 }
  
 const Banner: FunctionComponent<BannerProps> = ({slides}) => {
-  const [slideArray, setSlideArray] = useState<Slide[]>(slides)
+  const [currentSlideId, setCurrentSlideId] = useState<number>(0)
   const handleSlideLeft = () => {
-    setSlideArray([slideArray[slideArray.length - 1], ...slideArray.slice(0, slideArray.length - 1)])
+    if (currentSlideId === 0) {
+      setCurrentSlideId(prevVal => prevVal - 1)
+    } else {
+      setCurrentSlideId(slides.length - 1)
+    }
   }
   const handleSlideRight = () => {
-    setSlideArray([...slideArray.slice(1), slideArray[0]])
+    if (currentSlideId === slides.length - 1) {
+      setCurrentSlideId(0)
+    } else {
+      setCurrentSlideId(prevVal => prevVal + 1)
+    }
   }
 
   return (
     <div className={styles.container}>
       <div className={styles.slider}>
-        {slideArray.map((slide) => (
+        {slides.map((slide, id) => (
           <div 
             key={slide.image} 
             className={`${styles.slide}`} 
-            style={{backgroundImage: `url(${slide.image})`}}
+            style={currentSlideId === id ? {backgroundImage: `url(${slide.image})`} : {display: 'none'}}
           >
             <h1>{slide.label}</h1>
             <p>{slide.paragraph}</p>
@@ -34,8 +42,8 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
         <img src={arrowLeft} alt="" className={styles.arrow} />
         </button>
         <div className={styles.middleSection} id="slider">
-          {slideArray.map((slide, id) => (
-            <div key={id} className={styles.circle}>
+          {slides.map((slide, id) => (
+            <div key={id} className={styles.circle} style={currentSlideId === id ? {} : {opacity: 0.5}}>
               
             </div>
           ))}
