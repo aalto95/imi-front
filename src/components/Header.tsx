@@ -9,6 +9,7 @@ export const Header = () => {
   const [isSidebarActive, setIsSidebarActive] = useRecoilState(sidebarState)
   const onHamburgerClick = () => {
     setIsSidebarActive(!isSidebarActive)
+    document.body.style.overflow = "hidden"
   }
   const [navigation] = useState([
     {

@@ -8,6 +8,7 @@ export const Sidebar = () => {
   const [isSidebarActive, setIsSidebarActive] = useRecoilState(sidebarState)
   const onCloseClick = () => {
     setIsSidebarActive(!isSidebarActive)
+    document.body.style.overflow = "visible"
   }
   const [navigation] = useState([
     {
