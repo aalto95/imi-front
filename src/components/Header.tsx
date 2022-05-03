@@ -13,31 +13,31 @@ export const Header = () => {
   const [navigation] = useState([
     {
       name: 'Институт',
-      path: '/'
+      path: '/institute'
     },
     {
       name: 'Абитуриентам',
-      path: '/'
+      path: '/enrollees'
     },
     {
       name: 'Студентам',
-      path: '/'
+      path: '/students'
     },
     {
       name: 'Выпускникам',
-      path: '/'
+      path: '/graduates'
     },
     {
       name: 'Работникам',
-      path: '/'
+      path: '/employees'
     },
     {
       name: 'ПОС ИМИ',
-      path: '/'
+      path: '/posimi'
     },
     {
       name: 'Трудоустройство',
-      path: '/'
+      path: '/work'
     }
   ])
   return (
