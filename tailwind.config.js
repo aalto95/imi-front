@@ -14,6 +14,9 @@ module.exports = {
         'antique-white': '#faebd7',
         'light-gray': '#ebf3f8'
       },
+      height: {
+        '18': '72px'
+      }
     },
   },
   plugins: [],
