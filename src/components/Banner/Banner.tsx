@@ -24,6 +24,9 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
       setCurrentSlideId(prevVal => prevVal + 1)
     }
   }
+  const onDotClick = (id: number) => {
+    setCurrentSlideId(id)
+  }
 
   return (
     <div className={styles.container}>
@@ -43,9 +46,10 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
         </button>
         <div className={styles.middleSection} id="slider">
           {slides.map((slide, id) => (
-            <div key={id} className={styles.circle} style={currentSlideId === id ? {} : {opacity: 0.5}}>
-              
-            </div>
+            <button key={id} className={styles.circleWrapper} onClick={() => onDotClick(id)}>
+              <div className={styles.circle} style={currentSlideId === id ? {} : {opacity: 0.5}}>
+              </div>
+            </button>
           ))}
         </div>
         <button className={styles.slideButton} onClick={handleSlideRight}>

@@ -72,6 +72,10 @@
   z-index: 1;
 }
 
+.circleWrapper {
+  z-index: 2;
+}
+
 h1,
 p {
   color: #fff;
