@@ -15,6 +15,8 @@ module.exports = {
         'light-gray': '#ebf3f8'
       },
       height: {
+        '5': '20px',
+        '7': '28px',
         '18': '72px'
       }
     },
