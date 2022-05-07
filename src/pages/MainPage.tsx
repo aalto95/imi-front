@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import Banner from '../components/Banner/Banner'
+import NewsSlider from '../components/NewsSlider'
 import TileBlocks from '../components/TileBlocks'
 
 interface MainPageProps {
@@ -27,6 +28,7 @@ const MainPage: FunctionComponent<MainPageProps> = () => {
   return (
     <>
       <Banner slides={mockData}/>
+      <NewsSlider slides={mockData}/>
       <TileBlocks />
     </>
   );

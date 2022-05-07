@@ -7,6 +7,9 @@ module.exports = {
       'centurygothic': ['centurygothic', 'sans-serif']
     },
     extend: {
+      screens: {
+        'xs': '480px'
+      },
       colors: {
         'terracota': '#943813',
         'berlin-blue': '#003153',

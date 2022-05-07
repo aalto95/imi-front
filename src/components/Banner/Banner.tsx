@@ -12,9 +12,9 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
   const [currentSlideId, setCurrentSlideId] = useState<number>(0)
   const handleSlideLeft = () => {
     if (currentSlideId === 0) {
-      setCurrentSlideId(prevVal => prevVal - 1)
-    } else {
       setCurrentSlideId(slides.length - 1)
+    } else {
+      setCurrentSlideId(prevVal => prevVal - 1)
     }
   }
   const handleSlideRight = () => {
