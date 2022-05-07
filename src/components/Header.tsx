@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useRecoilState } from 'recoil'
 import logo from '../assets/imi_logo.png'
 import { sidebarState } from '../recoil/atoms/sidebarAtom'
 import menuIcon from '../assets/menu-icon.svg'
 import {v4} from 'uuid';
+import { useHover } from 'usehooks-ts'
 
 export const Header = () => {
   const [isSidebarActive, setIsSidebarActive] = useRecoilState(sidebarState)
@@ -56,7 +57,7 @@ export const Header = () => {
       },
       {
         name: '3D-музей',
-        path: '/graduates'
+        path: '/3d_museum'
       },
       {
         name: 'Вопросы-ответы',
@@ -146,6 +147,9 @@ export const Header = () => {
       },
     ]
   ])
+  
+  const hoverRef = useRef(null)
+  const isHover = useHover(hoverRef)
 
   return (
     <>
@@ -163,12 +167,12 @@ export const Header = () => {
             <img src={menuIcon} alt="menu icon" className="w-8" />
           </button>
         </div>
-        <nav className="w-full hidden md:visible md:flex md:justify-between md:pb-4 absolute hover:z-30 left-0 top-40 bg-white">
+        <nav ref={hoverRef} className="w-full hidden md:visible md:flex md:justify-between md:pb-4 absolute left-0 bg-white z-30">
           {
             linkRepository.map((linkArray, i) => (
               <div key={v4()} className="flex flex-col w-1/6 items-center">
                 <Link to={navigation[i].path} className="md:text-xs lg:text-sm xl:text-md 2xl:text-lg uppercase text-terracota" key={navigation[i].name}>{navigation[i].name}</Link>
-                <div className="flex flex-col items-center text-center">
+                {isHover && <div className="flex flex-col items-center text-center">
                   {
                     linkArray.map((link) => {
                       return (
@@ -176,7 +180,7 @@ export const Header = () => {
                       )
                     })
                   }
-                </div>
+                </div>}
               </div>
             ))
           }
