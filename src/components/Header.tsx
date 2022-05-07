@@ -38,7 +38,6 @@ export const Header = () => {
       name: 'Наука',
       path: '/science'
     },
-
   ])
 
   const [linkRepository] = useState([
