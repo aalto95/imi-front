@@ -43,7 +43,7 @@ export const Header = () => {
   ])
   return (
     <>
-      <header className="h-18 md:h-auto px-4 sm:px-8 md:px-12 xl:px-24 2xl:px-32 bg-white w-full fixed md:static z-10">
+      <header className="h-18 md:h-auto px-4 sm:px-8 md:px-12 xl:px-24 2xl:px-32 bg-white w-full fixed md:static z-30">
         <div className="flex justify-between my-4 md:my-8 xl:my-12">
           <Link to="/" className="flex items-center">
             <img src={logo} alt="imi-logo" className="w-10 md:w-16 lg:w-24 mr-4" />
