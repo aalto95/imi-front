@@ -24,7 +24,7 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
   }, 3000)
 
   return (
-    <div className="w-full h-96 flex justify-center items-center relative">
+    <div className="z-10 w-full h-96 flex justify-center items-center relative">
       <div className="w-full h-full flex justify-between items-center">
         {slides.map((slide, id) => (
           <div 
