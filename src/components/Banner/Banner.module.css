@@ -29,32 +29,6 @@
   pointer-events: none;
 }
 
-.slideButton {
-  width: 10%;
-  height: 100%;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
-  z-index: 5;
-}
-
-.slideButton:hover {
-  background-color: #fff;
-  opacity: 0.3;
-}
-
-.arrow {
-  width: 30px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .middleSection {
   height: 100%;
   display: flex;

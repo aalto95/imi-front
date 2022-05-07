@@ -1,8 +1,7 @@
 import { FunctionComponent, useState } from 'react'
 import { Slide } from '../../models/slide'
 import styles from './Banner.module.css'
-import arrowRight from '../../assets/right-svgrepo-com.svg'
-import arrowLeft from '../../assets/left-svgrepo-com.svg'
+import { useInterval } from 'usehooks-ts'
 
 interface BannerProps {
   slides: Slide[]
@@ -10,13 +9,6 @@ interface BannerProps {
  
 const Banner: FunctionComponent<BannerProps> = ({slides}) => {
   const [currentSlideId, setCurrentSlideId] = useState<number>(0)
-  const handleSlideLeft = () => {
-    if (currentSlideId === 0) {
-      setCurrentSlideId(slides.length - 1)
-    } else {
-      setCurrentSlideId(prevVal => prevVal - 1)
-    }
-  }
   const handleSlideRight = () => {
     if (currentSlideId === slides.length - 1) {
       setCurrentSlideId(0)
@@ -28,8 +20,12 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
     setCurrentSlideId(id)
   }
 
+  useInterval(() => {
+    handleSlideRight()
+  }, 3000)
+
   return (
-    <div className={styles.container}>
+    <div className="w-full h-96 flex justify-center items-center relative">
       <div className={styles.slider}>
         {slides.map((slide, id) => (
           <div 
@@ -41,9 +37,6 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
             <p>{slide.paragraph}</p>
           </div>
         ))}
-        <button className={styles.slideButton} onClick={handleSlideLeft}>
-        <img src={arrowLeft} alt="" className={styles.arrow} />
-        </button>
         <div className={styles.middleSection} id="slider">
           {slides.map((slide, id) => (
             <button key={id} className={styles.circleWrapper} onClick={() => onDotClick(id)}>
@@ -52,9 +45,6 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
             </button>
           ))}
         </div>
-        <button className={styles.slideButton} onClick={handleSlideRight}>
-          <img src={arrowRight} alt="" className={styles.arrow} />
-        </button>
       </div>
     </div>
   )
