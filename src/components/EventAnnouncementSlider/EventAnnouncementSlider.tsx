@@ -33,9 +33,9 @@ const EventAnnouncementSlider: FunctionComponent<EventAnnouncementSliderProps> =
             return (
             <div key={slide.label + i} id={'item' + i.toString()} className="w-full xs:w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/5">
               <img src={slide.image} alt="" className="h-72 w-full object-cover"/>
-              <p className="text-black">{slide.label}</p>
+              <p className="text-black mt-6 mb-10">{slide.label}</p>
               <div className="flex justify-end">
-                <p className="text-light-gray">{format(new Date(), 'dd/MM/yyyy')}</p>
+                <p className="text-gray-500">{format(new Date(), 'dd/MM/yyyy')}</p>
               </div>
             </div>
             )

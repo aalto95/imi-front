@@ -30,7 +30,7 @@ const NewsSlider: FunctionComponent<NewsSliderProps> = ({slides}) => {
           <img src={arrowLeft} alt="" />
         </button>
         <div style={{backgroundImage: `url(${slideArray[firstSlideId].image})`}} className='w-full sm:w-1/2 lg:w-1/3 h-96 md:h-140 bg-cover flex justify-center'>
-          <h2 className="text-white">{slideArray[firstSlideId].paragraph}</h2>
+          <h2 className="text-white text-2xl m-2">{slideArray[firstSlideId].paragraph}</h2>
         </div>
         <div className='hidden sm:block w-1/2 lg:w-1/3'>
           <img src={slideArray[firstSlideId + 1].image} alt="" className="h-68 md:h-96 w-full object-cover"/>
@@ -40,7 +40,7 @@ const NewsSlider: FunctionComponent<NewsSliderProps> = ({slides}) => {
               <p className="text-black">{slideArray[firstSlideId + 1].paragraph}</p>
             </div>
             <div className="flex justify-end">
-              <p className="text-black">{format(new Date(), 'dd/MM/yyyy')}</p>
+              <p className="text-gray-500">{format(new Date(), 'dd/MM/yyyy')}</p>
             </div>
           </div>
         </div>
@@ -52,7 +52,7 @@ const NewsSlider: FunctionComponent<NewsSliderProps> = ({slides}) => {
               <p className="text-black">{slideArray[firstSlideId + 2].paragraph}</p>
             </div>
             <div className="flex justify-end">
-                <p className="text-black">{format(new Date(), 'dd/MM/yyyy')}</p>
+                <p className="text-gray-500">{format(new Date(), 'dd/MM/yyyy')}</p>
             </div>
           </div>
         </div>
