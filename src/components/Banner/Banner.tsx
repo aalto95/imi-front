@@ -33,7 +33,7 @@ const Banner: FunctionComponent<BannerProps> = ({slides}) => {
       <div className={styles.slider}>
         {slides.map((slide, id) => (
           <div 
-            key={slide.image} 
+            key={slide.label + id} 
             className={`${styles.slide}`} 
             style={currentSlideId === id ? {backgroundImage: `url(${slide.image})`} : {display: 'none'}}
           >

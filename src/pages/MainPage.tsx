@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 import Banner from '../components/Banner/Banner'
-import EventAnnouncementSlider from '../components/EventAnnouncementSlider'
+import EventAnnouncementSlider from '../components/EventAnnouncementSlider/EventAnnouncementSlider'
 import NewsSlider from '../components/NewsSlider'
 import TileBlocks from '../components/TileBlocks'
 
