@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import Banner from '../components/Banner/Banner'
+import EventAnnouncementSlider from '../components/EventAnnouncementSlider'
 import NewsSlider from '../components/NewsSlider'
 import TileBlocks from '../components/TileBlocks'
 
@@ -23,12 +24,32 @@ const MainPage: FunctionComponent<MainPageProps> = () => {
       image: "https://sun9-70.userapi.com/impg/chs7j7FOumnwuJ1xTQDnJ_fGRNRDabreLdWF9A/f997PEVwXOI.jpg?size=640x853&quality=96&sign=9f03d03bc1d5ead9d5a31b0a7a3d2c21&type=album",
       label: "label 3",
       paragraph: "paragraph 3",
+    },
+    {
+      image: "https://sun9-70.userapi.com/impg/chs7j7FOumnwuJ1xTQDnJ_fGRNRDabreLdWF9A/f997PEVwXOI.jpg?size=640x853&quality=96&sign=9f03d03bc1d5ead9d5a31b0a7a3d2c21&type=album",
+      label: "label 3",
+      paragraph: "paragraph 3",
+    },
+    {
+      image: "https://sun9-70.userapi.com/impg/chs7j7FOumnwuJ1xTQDnJ_fGRNRDabreLdWF9A/f997PEVwXOI.jpg?size=640x853&quality=96&sign=9f03d03bc1d5ead9d5a31b0a7a3d2c21&type=album",
+      label: "label 3",
+      paragraph: "paragraph 3",
+    },
+    {
+      image: "https://sun9-70.userapi.com/impg/chs7j7FOumnwuJ1xTQDnJ_fGRNRDabreLdWF9A/f997PEVwXOI.jpg?size=640x853&quality=96&sign=9f03d03bc1d5ead9d5a31b0a7a3d2c21&type=album",
+      label: "label 3",
+      paragraph: "paragraph 3",
+    },    {
+      image: "https://sun9-70.userapi.com/impg/chs7j7FOumnwuJ1xTQDnJ_fGRNRDabreLdWF9A/f997PEVwXOI.jpg?size=640x853&quality=96&sign=9f03d03bc1d5ead9d5a31b0a7a3d2c21&type=album",
+      label: "label 3",
+      paragraph: "paragraph 3",
     }
   ]
   return (
     <>
       <Banner slides={mockData}/>
       <NewsSlider slides={mockData}/>
+      <EventAnnouncementSlider slides={mockData}/>
       <TileBlocks />
     </>
   );

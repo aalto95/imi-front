@@ -1,8 +1,7 @@
 
-import { format, getMonth } from 'date-fns'
+import { format } from 'date-fns'
 import { FunctionComponent, useState } from 'react'
 import { Slide } from '../models/slide'
-import { ru } from 'date-fns/locale'
 
 interface NewsSliderProps {
   slides: Slide[]
@@ -12,9 +11,9 @@ const NewsSlider: FunctionComponent<NewsSliderProps> = ({slides}) => {
   const [firstSlide, setFirstSlide] = useState(0)
   return (
     <div className="my-8">
-      <div className="flex justify-between mx-4 sm:mx-8 md:mx-12 mb-4">
-        <h1 className="text-terracota">НОВОСТИ ИМИ</h1>
-        <p className="text-black">Все новости</p>
+      <div className="flex justify-between items-center mx-4 sm:mx-8 md:mx-12 mb-4">
+        <h1 className="text-terracota text-xl">НОВОСТИ ИМИ</h1>
+        <p className="text-black text-sm">ВСЕ НОВОСТИ</p>
       </div>
       <div className="flex">
         <div style={{backgroundImage: `url(${slides[firstSlide].image})`}} className='w-full xs:w-1/2 md:w-1/3 h-80 bg-cover flex justify-center'>

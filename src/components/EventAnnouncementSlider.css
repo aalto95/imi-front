@@ -1,0 +1,17 @@
+@media screen and (max-width: 1024px) {
+  #item3 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #item2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #item1 {
+    display: none;
+  }
+}
