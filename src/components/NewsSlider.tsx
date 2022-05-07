@@ -26,7 +26,7 @@ const NewsSlider: FunctionComponent<NewsSliderProps> = ({slides}) => {
         <p className="text-black text-sm">ВСЕ НОВОСТИ</p>
       </div>
       <div className="flex">
-        <button className="p-4" onClick={handleSlideLeft}>
+        <button className="p-2" onClick={handleSlideLeft}>
           <img src={arrowLeft} alt="" />
         </button>
         <div style={{backgroundImage: `url(${slideArray[firstSlideId].image})`}} className='w-full sm:w-1/2 lg:w-1/3 h-96 md:h-140 bg-cover flex justify-center'>
@@ -56,7 +56,7 @@ const NewsSlider: FunctionComponent<NewsSliderProps> = ({slides}) => {
             </div>
           </div>
         </div>
-        <button className="p-4" onClick={handleSlideRight}>
+        <button className="p-2" onClick={handleSlideRight}>
           <img src={arrowRight} alt="" />
         </button>
       </div>
