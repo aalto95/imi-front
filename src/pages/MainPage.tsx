@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react'
 import Banner from '../components/Banner'
 import EventAnnouncementSlider from '../components/EventAnnouncementSlider/EventAnnouncementSlider'
+import ForEnrollee from '../components/ForEnrollee'
 import NewsSlider from '../components/NewsSlider'
 import TileBlocks from '../components/TileBlocks'
 
@@ -50,6 +51,7 @@ const MainPage: FunctionComponent<MainPageProps> = () => {
       <Banner slides={mockData}/>
       <NewsSlider slides={mockData}/>
       <EventAnnouncementSlider slides={mockData}/>
+      <ForEnrollee />
       <TileBlocks />
     </>
   );
