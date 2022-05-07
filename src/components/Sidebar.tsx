@@ -41,7 +41,7 @@ export const Sidebar = () => {
     }
   ])
   return (
-    <div className="block w-full h-screen fixed p-4 bg-berlin-blue top-0 z-10 lg:hidden pr-5 pt-6">
+    <div className="block w-full h-screen fixed p-4 bg-berlin-blue top-0 z-30 lg:hidden pr-5 pt-6">
       <div className="flex justify-end">
         <button onClick={onCloseClick}>
           <img src={closeIcon} alt="close-icon" className="w-6" />
@@ -51,7 +51,7 @@ export const Sidebar = () => {
         {navigation.map((element) => {
           return (
             <Link key={element.name} to={element.path} onClick={onCloseClick}>
-              <p className="text-xl font-bold m-2">{element.name}</p>
+              <p className="text-white text-xl font-bold m-2">{element.name}</p>
             </Link>
           )
         })}
